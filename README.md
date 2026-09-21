@@ -1,18 +1,11 @@
-# Tanderbold Tap
+# tanderbold/tap
 
-## How do I install these formulae?
+Homebrew tap for [NotepadMac](https://github.com/tanderbold/NotepadMac), the native macOS port of Notepad++.
 
-`brew install tanderbold/tap/<formula>`
+## Install
 
-Or `brew tap tanderbold/tap` and then `brew install <formula>`.
-
-Or, in a `brew bundle` `Brewfile`:
-
-```ruby
-tap "tanderbold/tap"
-brew "<formula>"
+```
+brew install --cask tanderbold/tap/notepadmac
 ```
 
-## Documentation
-
-`brew help`, `man brew` or check [Homebrew's documentation](https://docs.brew.sh).
+Updates arrive with `brew upgrade` as new releases are published.
