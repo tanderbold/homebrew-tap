@@ -1,6 +1,6 @@
 cask "notepadmac" do
-  version "0.2.0"
-  sha256 "aaeac02b2ccf4053cfd63d3396f59a3036d4027eedba5000242c2cb6c0352920"
+  version "0.3.0"
+  sha256 "9a3051af7b27c511d109cc1b35397e088f38d39ed9cb36d9118ce94e4cab9c23"
 
   url "https://github.com/tanderbold/NotepadMac/releases/download/v#{version}/NotepadMac-#{version}.dmg"
   name "NotepadMac"
