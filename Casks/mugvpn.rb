@@ -16,15 +16,23 @@ cask "mugvpn" do
 
   app "MugVPN.app"
 
-  # The app registers a privileged helper (SMAppService daemon); its own
-  # uninstaller (About MugVPN > Uninstall MugVPN…, or `MugVPN --uninstall`)
-  # removes the helper and the system part under /Library.
-  uninstall launchctl: "com.mugvpn.helper"
+  # The app registers a privileged helper (SMAppService daemon). Its own uninstaller
+  # (About MugVPN > Uninstall MugVPN…, or `MugVPN --uninstall`) removes everything; here the
+  # helper and its files go, profiles stay (as when the app is dragged to the Trash).
+  uninstall launchctl: "com.mugvpn.helper",
+            delete:    [
+              "/Library/Application Support/MugVPN/libexec",
+              "/Library/Application Support/MugVPN/locks.json",
+              "/Library/Application Support/MugVPN/run",
+              "/Library/LaunchDaemons/com.mugvpn.helper.plist",
+              "/Library/Logs/MugVPN",
+            ]
 
-  zap trash: [
-    "~/Library/Application Support/MugVPN",
-    "~/Library/Logs/MugVPN",
-    "~/Library/Preferences/com.mugvpn.app.plist",
-    "~/Library/Saved Application State/com.mugvpn.app.savedState",
-  ]
+  zap delete: "/Library/Application Support/MugVPN",
+      trash:  [
+        "~/Library/Application Support/MugVPN",
+        "~/Library/Logs/MugVPN",
+        "~/Library/Preferences/com.mugvpn.app.plist",
+        "~/Library/Saved Application State/com.mugvpn.app.savedState",
+      ]
 end
