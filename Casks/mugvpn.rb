@@ -1,6 +1,6 @@
 cask "mugvpn" do
-  version "0.2.7"
-  sha256 "337d1ff03eff3f2240ecec784b1276388b0a2962a2cad8fb4b3484951a11154c"
+  version "0.3.0"
+  sha256 "9afc5a371e876955eb32846f0a8e39c8b112b60d3778c233aa05ea27a3539e95"
 
   url "https://github.com/tanderbold/MugVPN/releases/download/v#{version}/MugVPN-#{version}.dmg"
   name "MugVPN"
